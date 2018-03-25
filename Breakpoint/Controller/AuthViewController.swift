@@ -9,11 +9,30 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-
+    
+    //MARK: - Outlets
+    /***************************************************************/
+    
+    //MARK: - Methods
+    /***************************************************************/
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    //MARK: - Actions
+    /***************************************************************/
+    @IBAction func signInWithEmailButtonPressed(_ sender: Any) {
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
+        present(loginVC!, animated: true, completion: nil)
+    }
+    
+    @IBAction func facebookSigninButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func googleSigninButtonPressed(_ sender: Any) {
+        
     }
     
 }
