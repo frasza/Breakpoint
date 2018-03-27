@@ -23,7 +23,7 @@ class CreatePostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        sendButton.bindToKeyboard()
     }
     
     //MARK: - Actions
