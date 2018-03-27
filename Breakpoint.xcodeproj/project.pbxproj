@@ -23,6 +23,7 @@
 		3A5E0708206A9BA5009466F8 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E0707206A9BA5009466F8 /* MeViewController.swift */; };
 		3A5E070A206A9FE5009466F8 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E0709206A9FE5009466F8 /* CreatePostViewController.swift */; };
 		3A5E070C206ABC91009466F8 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E070B206ABC91009466F8 /* UIViewExt.swift */; };
+		3A5E070E206AC6FB009466F8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E070D206AC6FB009466F8 /* FeedCell.swift */; };
 		BFC90B6E46589AF74D82E72E /* Pods_Breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15A90708F273730D4CC7EB5 /* Pods_Breakpoint.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		3A5E0707206A9BA5009466F8 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		3A5E0709206A9FE5009466F8 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		3A5E070B206ABC91009466F8 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		3A5E070D206AC6FB009466F8 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		3E8400107E545D3005D71790 /* Pods-Breakpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breakpoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breakpoint/Pods-Breakpoint.release.xcconfig"; sourceTree = "<group>"; };
 		B47B988F417F8D277061CA23 /* Pods-Breakpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breakpoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breakpoint/Pods-Breakpoint.debug.xcconfig"; sourceTree = "<group>"; };
 		F15A90708F273730D4CC7EB5 /* Pods_Breakpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Breakpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 			children = (
 				3A36836F2067F5B50051EAD1 /* InsetTextField.swift */,
 				3A3683712067F8F80051EAD1 /* ShadowView.swift */,
+				3A5E070D206AC6FB009466F8 /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5E070C206ABC91009466F8 /* UIViewExt.swift in Sources */,
+				3A5E070E206AC6FB009466F8 /* FeedCell.swift in Sources */,
 				3A5E0708206A9BA5009466F8 /* MeViewController.swift in Sources */,
 				3A36836E2067F55D0051EAD1 /* LoginViewController.swift in Sources */,
 				3A3683532067E8890051EAD1 /* GroupsViewController.swift in Sources */,
