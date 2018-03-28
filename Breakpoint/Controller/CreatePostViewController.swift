@@ -26,6 +26,12 @@ class CreatePostViewController: UIViewController {
         sendButton.bindToKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        emailLabel.text = Auth.auth().currentUser?.email
+    }
+    
     //MARK: - Actions
     /***************************************************************/
     @IBAction func closeButtonPressed(_ sender: Any) {
