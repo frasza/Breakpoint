@@ -36,3 +36,21 @@ class CreateGroupViewController: UIViewController {
     }
     
 }
+
+//MARK: - Table View Extension
+/***************************************************************/
+extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else { return UITableViewCell() }
+        
+        cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: "lexa@lgbt.com", isSelected: true)
+        
+        return cell
+    }
+    
+}
