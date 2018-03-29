@@ -19,10 +19,24 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var groupMembersLabel: UILabel!
     
+    var emailArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        emailSearchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        if emailSearchTextField.text == "" {
+            emailArray.removeAll()
+            tableView.reloadData() 
+        } else {
+            DataService.instance.getEmail(forSearchQuery: emailSearchTextField.text!, handler: { (returnedEmailArray) in
+                self.emailArray = returnedEmailArray
+                self.tableView.reloadData()
+            })
+        }
     }
     
     //MARK: - Actions
@@ -32,7 +46,7 @@ class CreateGroupViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -42,15 +56,17 @@ class CreateGroupViewController: UIViewController {
 extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return emailArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else { return UITableViewCell() }
         
-        cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: "lexa@lgbt.com", isSelected: true)
+        cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: emailArray[indexPath.row], isSelected: true)
         
         return cell
     }
     
 }
+
+extension CreatePostViewController: UITextFieldDelegate { }
