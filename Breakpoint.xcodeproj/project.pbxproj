@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1091F5206D473E00C6F82F /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1091F4206D473E00C6F82F /* CreateGroupViewController.swift */; };
 		3A36834F2067E8890051EAD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36834E2067E8890051EAD1 /* AppDelegate.swift */; };
 		3A3683512067E8890051EAD1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3683502067E8890051EAD1 /* FeedViewController.swift */; };
 		3A3683532067E8890051EAD1 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3683522067E8890051EAD1 /* GroupsViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1091F4206D473E00C6F82F /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		3A36834B2067E8890051EAD1 /* Breakpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A36834E2067E8890051EAD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A3683502067E8890051EAD1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				3A36836D2067F55D0051EAD1 /* LoginViewController.swift */,
 				3A5E0707206A9BA5009466F8 /* MeViewController.swift */,
 				3A5E0709206A9FE5009466F8 /* CreatePostViewController.swift */,
+				3A1091F4206D473E00C6F82F /* CreateGroupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				3A5E0708206A9BA5009466F8 /* MeViewController.swift in Sources */,
 				3A36836E2067F55D0051EAD1 /* LoginViewController.swift in Sources */,
 				3A3683532067E8890051EAD1 /* GroupsViewController.swift in Sources */,
+				3A1091F5206D473E00C6F82F /* CreateGroupViewController.swift in Sources */,
 				3A36834F2067E8890051EAD1 /* AppDelegate.swift in Sources */,
 				3A368374206806D80051EAD1 /* AuthService.swift in Sources */,
 				3A36836C2067F5340051EAD1 /* AuthViewController.swift in Sources */,
