@@ -20,11 +20,17 @@ class CreateGroupViewController: UIViewController {
     @IBOutlet weak var groupMembersLabel: UILabel!
     
     var emailArray = [String]()
+    var chosenUserArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         emailSearchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        doneButton.isHidden = true
     }
     
     @objc func textFieldDidChange() {
@@ -62,9 +68,33 @@ extension CreateGroupViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell else { return UITableViewCell() }
         
-        cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: emailArray[indexPath.row], isSelected: true)
+        if chosenUserArray.contains(emailArray[indexPath.row]) {
+            cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: emailArray[indexPath.row], isSelected: true)
+        } else {
+            cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: emailArray[indexPath.row], isSelected: false)
+        }
+        
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
+        if !chosenUserArray.contains(cell.emailLabel.text!) {
+            chosenUserArray.append(cell.emailLabel.text!)
+            groupMembersLabel.text = chosenUserArray.joined(separator: ", ")
+            doneButton.isHidden = false
+        } else {
+            chosenUserArray = chosenUserArray.filter({ $0 != cell.emailLabel.text! })
+            if chosenUserArray.count > 0 {
+                groupMembersLabel.text = chosenUserArray.joined(separator: ", ")
+            } else {
+                groupMembersLabel.text = "Add people to your group"
+                doneButton.isHidden = true
+            }
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
