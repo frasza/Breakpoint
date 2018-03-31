@@ -61,7 +61,7 @@ class GroupFeedViewController: UIViewController {
         if messageTextField.text != "" {
             sendButton.isEnabled = false
             messageTextField.isEnabled = false
-            DataService.instance.uploadPost(withMessage: messageTextField.text!, forUID: (Auth.auth().currentUser?.email)!, withGroupKey: group?.key) { (complete) in
+            DataService.instance.uploadPost(withMessage: messageTextField.text!, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: group?.key) { (complete) in
                 if complete {
                     self.messageTextField.text = ""
                     self.messageTextField.isEnabled = true
@@ -84,9 +84,10 @@ extension GroupFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         let message = groupMessages[indexPath.row]
         
-        
-        cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: message.senderId, content: message.content)
-        
+        DataService.instance.getUsername(forUID: message.senderId) { (email) in
+            cell.configureCell(profileImage: #imageLiteral(resourceName: "defaultProfileImage"), email: email, content: message.content)
+        }
+    
         return cell
     }
     
