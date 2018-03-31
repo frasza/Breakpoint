@@ -52,7 +52,7 @@ class CreateGroupViewController: UIViewController {
         if titleTextField.text != "" && descriptionTextField.text != "" {
             DataService.instance.getIds(forUsernames: chosenUserArray) { (ids) in
                 var userIds = ids
-                userIds.append((Auth.auth().currentUser?.email)!)
+                userIds.append((Auth.auth().currentUser?.uid)!)
                 DataService.instance.createGroup(withTitle: self.titleTextField.text!, andDescription: self.descriptionTextField.text!, forUserIds: userIds, hander: { (complete) in
                     if complete {
                         self.dismiss(animated: true, completion: nil)

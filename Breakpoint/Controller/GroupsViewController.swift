@@ -14,10 +14,21 @@ class GroupsViewController: UIViewController {
     /***************************************************************/
     @IBOutlet weak var tableView: UITableView!
     
+    var groups = [Group]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DataService.instance.REF_GROUPS.observe(.value) { (snapshot) in
+            DataService.instance.getAllGroups { (returnedGroups) in
+                self.groups = returnedGroups
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }
@@ -27,13 +38,13 @@ class GroupsViewController: UIViewController {
 extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return groups.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell else { return UITableViewCell() }
-        
-        cell.configureCell(title: "nerd herd", description: "nerdiest nerds", memberCount: 4)
+        let group = groups[indexPath.row]
+        cell.configureCell(title: group.groupTitle, description: group.groupDescription, memberCount: group.memberCount)
         
         return cell
     }
