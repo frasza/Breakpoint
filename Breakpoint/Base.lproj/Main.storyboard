@@ -375,7 +375,7 @@
         <!--Group Feed View Controller-->
         <scene sceneID="8jU-9s-Lf2">
             <objects>
-                <viewController id="BgP-br-aaq" customClass="GroupFeedViewController" customModule="Breakpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupFeedViewController" id="BgP-br-aaq" customClass="GroupFeedViewController" customModule="Breakpoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nZ-0o-lG7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,8 +468,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BgP-br-aaq" id="Obc-Cg-7B7"/>
-                                    <outlet property="delegate" destination="BgP-br-aaq" id="oEN-qG-2V9"/>
+                                    <outlet property="dataSource" destination="BgP-br-aaq" id="S9N-g4-ijV"/>
+                                    <outlet property="delegate" destination="BgP-br-aaq" id="HbO-qL-Owq"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@breakpoint.com, 1@2.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zZL-0h-spp">

@@ -119,12 +119,12 @@
 			children = (
 				3A3683502067E8890051EAD1 /* FeedViewController.swift */,
 				3A3683522067E8890051EAD1 /* GroupsViewController.swift */,
+				3AFC9ECF206F926D00E08CEF /* GroupFeedViewController.swift */,
 				3A36836B2067F5340051EAD1 /* AuthViewController.swift */,
 				3A36836D2067F55D0051EAD1 /* LoginViewController.swift */,
 				3A5E0707206A9BA5009466F8 /* MeViewController.swift */,
 				3A5E0709206A9FE5009466F8 /* CreatePostViewController.swift */,
 				3A1091F4206D473E00C6F82F /* CreateGroupViewController.swift */,
-				3AFC9ECF206F926D00E08CEF /* GroupFeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
